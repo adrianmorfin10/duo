@@ -168,7 +168,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-3xl font-bold text-center text-gray-800 mb-12"
+            className="text-3xl font-bold text-center text-black mb-12"
           >
             Nuestros <span className="text-[#00A396]">Talentos Estrella</span>
           </motion.h3>
@@ -193,7 +193,7 @@ export default function Home() {
                   className="w-full h-64 object-cover"
                 />
                 <div className="p-6">
-                  <h4 className="font-bold text-xl mb-2">{talent.name}</h4>
+                  <h4 className="font-bold text-black text-xl mb-2">{talent.name}</h4>
                   <p className="text-[#00A396] mb-4">{talent.category}</p>
                   <div className="flex space-x-4">
                     <a 
