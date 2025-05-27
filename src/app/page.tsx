@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaInstagram, FaYoutube, FaTiktok, FaArrowRight, FaEnvelope,FaFacebook,FaStar, FaHandshake, FaChartLine,FaCrosshairs, FaMedal, FaChartBar,FaBars, FaTimes,FaLinkedin, FaHashtag  } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaTiktok, FaArrowRight, FaEnvelope,FaFacebook,FaStar, FaHandshake, FaChartLine,FaCrosshairs, FaMedal, FaChartBar,FaBars, FaTimes } from 'react-icons/fa';
 
 import Image from 'next/image';
 <Image src="/silhouette1.png" alt="Influencer" width={80} height={80} className="opacity-20" />
@@ -13,14 +13,7 @@ export default function Home() {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
   };
-  const floatingAnimation = {
-    y: [0, -15, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut"
-    }
-  };
+
 
   const staggerContainer = {
     hidden: { opacity: 0 },
