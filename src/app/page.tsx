@@ -405,13 +405,13 @@ export default function Home() {
       </motion.section>
 
       {/* Sección Talent */}
-      <section id="talent" className="py-20 bg-[#FFF9F0]">
+      <section id="talent" className="py-20 bg-gray-900">
         <div className="container mx-auto px-6">
           <motion.h3 
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold text-center text-gray-800 mb-16"
+            className="text-4xl font-bold text-center text-white mb-16"
           >
             Nuestro <span className="text-[#00A396]">Talento Estrella</span>
           </motion.h3>
@@ -512,7 +512,7 @@ export default function Home() {
                   </div>
                 </div>
                 
-                <div className="absolute inset-0 border border-transparent group-hover:border-[#00C2B3]/30 rounded-xl transition-all duration-300 pointer-events-none"></div>
+                <div className="absolute inset-0 border border-transparent group-hover:border-[#00C2B3]/100 rounded-xl transition-all duration-300 pointer-events-none"></div>
               </motion.div>
             ))}
           </motion.div>
