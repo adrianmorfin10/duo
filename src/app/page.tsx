@@ -61,24 +61,54 @@ export default function Home() {
           </button>
         </div>
         
-        {/* Mobile Menu */}
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-            className="md:hidden bg-gray-900 px-4 pb-4"
-          >
-            <div className="flex flex-col space-y-3 pt-2">
-              <a href="#about" className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800">Quiénes Somos</a>
-              <a href="#talent" className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800">Nuestro Talento</a>
-              <a href="#clients" className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800">Clientes</a>
-              <a href="#partners" className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800">Aliados</a>
-              <a href="#contact" className="bg-gradient-to-r from-[#00A396] to-[#00C2B3] text-white px-4 py-2 rounded-full hover:opacity-90 transition-colors text-center mt-2">Contacto</a>
-            </div>
-          </motion.div>
-        )}
+       {/* Mobile Menu */}
+{isMenuOpen && (
+  <motion.div
+    initial={{ opacity: 0, height: 0 }}
+    animate={{ opacity: 1, height: 'auto' }}
+    exit={{ opacity: 0, height: 0 }}
+    transition={{ duration: 0.3 }}
+    className="md:hidden bg-gray-900 px-4 pb-4"
+  >
+    <div className="flex flex-col space-y-3 pt-2">
+      <a 
+        href="#about" 
+        onClick={() => setIsMenuOpen(false)} 
+        className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800"
+      >
+        Quiénes Somos
+      </a>
+      <a 
+        href="#talent" 
+        onClick={() => setIsMenuOpen(false)} 
+        className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800"
+      >
+        Nuestro Talento
+      </a>
+      <a 
+        href="#clients" 
+        onClick={() => setIsMenuOpen(false)} 
+        className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800"
+      >
+        Clientes
+      </a>
+      <a 
+        href="#partners" 
+        onClick={() => setIsMenuOpen(false)} 
+        className="text-gray-300 hover:text-white transition-colors py-2 border-b border-gray-800"
+      >
+        Aliados
+      </a>
+      <a 
+        href="#contact" 
+        onClick={() => setIsMenuOpen(false)} 
+        className="bg-gradient-to-r from-[#00A396] to-[#00C2B3] text-white px-4 py-2 rounded-full hover:opacity-90 transition-colors text-center mt-2"
+      >
+        Contacto
+      </a>
+    </div>
+  </motion.div>
+)}
       </motion.nav>
 
       {/* Hero Section */}
@@ -434,29 +464,29 @@ export default function Home() {
                 name: "Karen Ornelas",
                 image: "/karen.jpg",
                 category: "Lifestyle",
-                instagram: "https://instagram.com/karenornelas",
-                tiktok: "https://tiktok.com/@karenornelas"
+                instagram: "https://instagram.com/karen_ornelass_",
+                tiktok: "https://tiktok.com/@karen_ornelass_"
               },
               {
                 name: "Mir Mejia",
                 image: "/mir.jpg",
                 category: "Fitness",
-                instagram: "https://instagram.com/mirmejia",
+                instagram: "https://instagram.com/mir182",
                 tiktok: "https://tiktok.com/@mirmejia"
               },
               {
                 name: "Vania Castillo",
                 image: "/vania.jpg",
                 category: "Beauty",
-                instagram: "https://instagram.com/vaniacastillo",
-                tiktok: "https://tiktok.com/@vaniacastillo"
+                instagram: "https://instagram.com/vanniacastillo",
+                tiktok: "https://tiktok.com/@vanniacastillo2"
               },
               {
                 name: "Sandra Medina",
                 image: "/san.jpg",
-                category: "Digital Creator",
-                instagram: "https://instagram.com/sandramedina",
-                tiktok: "https://tiktok.com/@sandramedina"
+                category: "Pet Lover",
+                instagram: "https://instagram.com/san.mendezm",
+                tiktok: "https://tiktok.com/@san.mendez"
               }
             ].map((talent, index) => (
               <motion.div
@@ -519,98 +549,86 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sección Partners */}
-      <section id="partners" className="py-20 bg-white">
-        <div className="container mx-auto px-6">
-          <motion.h3
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold text-center text-gray-800 mb-16"
-          >
-            Nuestros <span className="text-[#00A396]">Aliados Estratégicos</span>
-          </motion.h3>
+  {/* Sección Partners */}
+<section id="partners" className="py-20 bg-white">
+  <div className="container mx-auto px-6">
+    <motion.h3
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      className="text-4xl font-bold text-center text-gray-800 mb-16"
+    >
+      Nuestros <span className="text-[#00A396]">Aliados Estratégicos</span>
+    </motion.h3>
+    
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={staggerContainer}
+      className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto"
+    >
+      {[
+        {
+          name: "Mextop",
+          logo: "/mextop.jpg",
+          description: "Plataforma líder en talento digital",
+          category: "Agencia Digital",
+          igProfile: "https://www.instagram.com/mextop_" // Agregar perfil de IG
+        },
+        {
+          name: "Giselle Gonzales",
+          logo: "/giselle.jpg",
+          description: "Especialistas en influencer marketing",
+          category: "Management",
+          igProfile: "https://www.instagram.com/giselleglezv" // Agregar perfil de IG
+        }
+      ].map((partner, index) => (
+        <motion.div
+          key={index}
+          variants={fadeIn}
+          whileHover={{ y: -5 }}
+          className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
+        >
+          <div className="relative h-64 overflow-hidden">
+            <Image
+              src={partner.logo}
+              alt={partner.name}
+              fill
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
+          </div>
           
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={staggerContainer}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto"
-          >
-            {[
-              {
-                name: "Mextop",
-                logo: "/mextop.jpg",
-                description: "Plataforma líder en talento digital",
-                category: "Agencia Digital"
-              },
-              {
-                name: "Giselle Gonzales",
-                logo: "/giselle.jpg",
-                description: "Especialistas en influencer marketing",
-                category: "Management"
-              }
-            ].map((partner, index) => (
-              <motion.div
-                key={index}
-                variants={fadeIn}
-                whileHover={{ y: -5 }}
-                className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 bg-white"
-              >
-                <div className="relative h-64 overflow-hidden">
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    fill
-                    className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                    quality={90}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/30 to-transparent"></div>
-                </div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-sm text-[#00A396] font-semibold">{partner.category}</span>
-                      <h4 className="text-2xl font-bold text-white mt-1">{partner.name}</h4>
-                    </div>
-                    <div className="bg-[#00A396] text-white px-2 py-1 rounded-full text-xs font-bold">
-                      <FaStar className="inline mr-1" /> Premium
-                    </div>
-                  </div>
-                  
-                  <p className="text-white/90 mt-2 text-sm">{partner.description}</p>
-                  
-                  <button className="mt-4 text-white flex items-center gap-2 text-sm font-medium hover:text-[#00C2B3] transition-colors">
-                    Ver casos de éxito <FaArrowRight size={12} />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-            viewport={{ once: true }}
-            className="mt-20 text-center"
-          >
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
-              ¿Quieres unirte a nuestra red de aliados estratégicos? Colaboramos con marcas que comparten nuestra visión de marketing auténtico.
-            </p>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-gradient-to-r from-[#00A396] to-[#0077B6] hover:from-[#008579] hover:to-[#005a84] text-white px-8 py-3 rounded-full font-medium transition flex items-center gap-2 mx-auto shadow-md"
+          <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
+            <div className="flex justify-between items-start">
+              <div>
+                <span className="text-sm text-[#00A396] font-semibold">{partner.category}</span>
+                <h4 className="text-2xl font-bold text-white mt-1">{partner.name}</h4>
+              </div>
+              <div className="bg-[#00A396] text-white px-2 py-1 rounded-full text-xs font-bold">
+                <FaStar className="inline mr-1" /> Premium
+              </div>
+            </div>
+            
+            <p className="text-white/90 mt-2 text-sm">{partner.description}</p>
+            
+            <a 
+              href={partner.igProfile} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="mt-4 text-white flex items-center gap-2 text-sm font-medium hover:text-[#00C2B3] transition-colors"
             >
-              <FaHandshake className="text-lg" /> Ser aliado estratégico
-            </motion.button>
-          </motion.div>
-        </div>
-      </section>
+              Ver perfil <FaArrowRight size={12} />
+            </a>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* Sección Contacto */}
       <motion.section
@@ -672,15 +690,17 @@ export default function Home() {
             </motion.div>
             
             <div className="flex justify-center mb-2 space-x-8 md:space-x-12">
-              <motion.a
-                href="#"
-                whileHover={{ y: -5 }}
-                className="text-[#00C2B3] hover:text-white transition-colors"
-                aria-label="Instagram"
-              >
-                <FaInstagram className="text-2xl md:text-3xl" />
-              </motion.a>
-            </div>
+  <motion.a
+    href="https://www.instagram.com/duotalentmx/"
+    whileHover={{ y: -5 }}
+    className="text-[#00C2B3] hover:text-white transition-colors"
+    aria-label="Instagram"
+    target="_blank" // Opcional: abre el enlace en una nueva pestaña
+    rel="noopener noreferrer" // Recomendado por seguridad para enlaces externos
+  >
+    <FaInstagram className="text-2xl md:text-3xl" />
+  </motion.a>
+</div>
             
             <motion.div
               initial={{ opacity: 0 }}
