@@ -491,6 +491,13 @@ export default function Home() {
           category: "Pet Lover",
           instagram: "https://instagram.com/san.mendezm",
           tiktok: "https://tiktok.com/@san.mendez"
+        },
+        {
+          name: "Johnny Garza",
+          image: "/jon.jpg",
+          category: "Lifestyle",
+          instagram: "https://instagram.com/garzaferoz",
+          tiktok: "https://tiktok.com/@garzaferoz"
         }
       ].map((talent, index) => (
         <motion.div
