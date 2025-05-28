@@ -376,178 +376,182 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Sección About */}
-      <motion.section 
-        id="about"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        variants={staggerContainer}
-        className="py-16 bg-white"
-      >
-        <div className="container mx-auto px-6">
-          <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">Potencia tu marca con <span className="text-[#00A396]">influencers estratégicos</span></h3>
-            <p className="text-gray-600">
-              El <strong>72% de las marcas</strong> eligen Instagram para campañas de influencers. Nosotros te ayudamos a <strong>destacar</strong> en esa plataforma y más.
-            </p>
-          </motion.div>
+{/* Sección About */}
+<motion.section 
+  id="about"
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true }}
+  variants={staggerContainer}
+  className="py-16 bg-white"
+>
+  <div className="container mx-auto px-6">
+    <motion.div variants={fadeIn} className="max-w-3xl mx-auto text-center mb-12">
+      <h3 className="text-3xl font-bold text-gray-800 mb-4">Potencia tu marca con <span className="text-[#00A396]">influencers estratégicos</span></h3>
+      <p className="text-gray-600 mb-6">
+        El <strong>72% de las marcas</strong> eligen Instagram para campañas de influencers. Nosotros te ayudamos a <strong>destacar</strong> en esa plataforma y más.
+      </p>
+      <p className="text-gray-600">
+        Somos una agencia de management de talento especializada en crear campañas exitosas de influencer marketing con nuestro talento exclusivo. Además, te ayudamos a identificar y conectar con los creadores de contenido ideales para los objetivos específicos de tu marca.
+      </p>
+    </motion.div>
 
-          <motion.div 
-            variants={staggerContainer}
-            className="grid md:grid-cols-3 gap-6"
-          >
-            {[
-              { 
-                icon: <FaCrosshairs className="text-white text-xl" />,
-                title: "Match Precision", 
-                desc: "Algoritmo con 92% de efectividad",
-                bg: "bg-[#0077B6]"
-              },
-              { 
-                icon: <FaMedal className="text-white text-xl" />,
-                title: "Talento Certificado", 
-                desc: "Engagement auditado y verificado",
-                bg: "bg-[#00A396]"
-              },
-              { 
-                icon: <FaChartBar className="text-white text-xl" />,
-                title: "ROI Transparente", 
-                desc: "Métricas en tiempo real",
-                bg: "bg-[#005F73]"
-              }
-            ].map((item, i) => (
-              <motion.div
-                key={i}
-                variants={fadeIn}
-                whileHover={{ y: -5 }}
-                className={`${item.bg} p-6 rounded-xl text-white shadow-md hover:shadow-lg transition-all`}
-              >
-                <div className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center mb-4">
-                  {item.icon}
-                </div>
-                <h4 className="font-bold text-xl mb-2">{item.title}</h4>
-                <p className="text-white/90">{item.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </motion.section>
+    <motion.div 
+      variants={staggerContainer}
+      className="grid md:grid-cols-3 gap-6"
+    >
+      {[
+        { 
+          icon: <FaCrosshairs className="text-white text-xl" />,
+          title: "Match Precision", 
+          desc: "Algoritmo con 92% de efectividad para encontrar el talento perfecto",
+          bg: "bg-[#0077B6]"
+        },
+        { 
+          icon: <FaMedal className="text-white text-xl" />,
+          title: "Talento Certificado", 
+          desc: "Engagement auditado y verificado en nuestro network exclusivo",
+          bg: "bg-[#00A396]"
+        },
+        { 
+          icon: <FaChartBar className="text-white text-xl" />,
+          title: "ROI Transparente", 
+          desc: "Métricas en tiempo real para cada campaña",
+          bg: "bg-[#005F73]"
+        }
+      ].map((item, i) => (
+        <motion.div
+          key={i}
+          variants={fadeIn}
+          whileHover={{ y: -5 }}
+          className={`${item.bg} p-6 rounded-xl text-white shadow-md hover:shadow-lg transition-all`}
+        >
+          <div className="w-12 h-12 rounded-full bg-black/20 flex items-center justify-center mb-4">
+            {item.icon}
+          </div>
+          <h4 className="font-bold text-xl mb-2">{item.title}</h4>
+          <p className="text-white/90">{item.desc}</p>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</motion.section>
 
-      {/* Sección Talent */}
-      <section id="talent" className="py-20 bg-gray-900">
-        <div className="container mx-auto px-6">
-          <motion.h3 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl font-bold text-center text-white mb-16"
-          >
-            Nuestro <span className="text-[#00A396]">Talento Estrella</span>
-          </motion.h3>
+{/* Sección Talent */}
+<section id="talent" className="py-20 bg-gray-900 overflow-hidden">
+  <div className="container mx-auto px-6">
+    <motion.h3 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true, margin: "-50px" }}
+      className="text-3xl md:text-4xl font-bold text-center text-white mb-12 md:mb-16"
+    >
+      Nuestro <span className="text-[#00A396]">Talento Estrella</span>
+    </motion.h3>
+    
+    <motion.div
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: "-50px" }}
+      variants={{
+        visible: {
+          transition: {
+            staggerChildren: 0.1
+          }
+        }
+      }}
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 px-4 sm:px-0"
+    >
+      {[
+        {
+          name: "Karen Ornelas",
+          image: "/karen.jpg",
+          category: "Lifestyle",
+          instagram: "https://instagram.com/karen_ornelass_",
+          tiktok: "https://tiktok.com/@karen_ornelass_"
+        },
+        {
+          name: "Mir Mejia",
+          image: "/mir.jpg",
+          category: "Fitness",
+          instagram: "https://instagram.com/mir182",
+          tiktok: "https://tiktok.com/@mirmejia"
+        },
+        {
+          name: "Vania Castillo",
+          image: "/vania.jpg",
+          category: "Beauty",
+          instagram: "https://instagram.com/vanniacastillo",
+          tiktok: "https://tiktok.com/@vanniacastillo2"
+        },
+        {
+          name: "Sandra Medina",
+          image: "/san.jpg",
+          category: "Pet Lover",
+          instagram: "https://instagram.com/san.mendezm",
+          tiktok: "https://tiktok.com/@san.mendez"
+        }
+      ].map((talent, index) => (
+        <motion.div
+          key={index}
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: "spring",
+              damping: 10,
+              stiffness: 100,
+              mass: 0.5
+            }
+          }}
+          viewport={{ once: true, margin: "-50px" }}
+          whileHover={{ 
+            y: -8,
+            boxShadow: "0 10px 25px -5px rgba(0, 163, 150, 0.2)"
+          }}
+          className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 bg-white"
+        >
+          <div className="relative h-72 w-full overflow-hidden">
+            <Image
+              src={talent.image}
+              alt={talent.name}
+              fill
+              className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              quality={90}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+          </div>
           
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={{
-              visible: {
-                transition: {
-                  staggerChildren: 0.15
-                }
-              }
-            }}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {[
-              {
-                name: "Karen Ornelas",
-                image: "/karen.jpg",
-                category: "Lifestyle",
-                instagram: "https://instagram.com/karen_ornelass_",
-                tiktok: "https://tiktok.com/@karen_ornelass_"
-              },
-              {
-                name: "Mir Mejia",
-                image: "/mir.jpg",
-                category: "Fitness",
-                instagram: "https://instagram.com/mir182",
-                tiktok: "https://tiktok.com/@mirmejia"
-              },
-              {
-                name: "Vania Castillo",
-                image: "/vania.jpg",
-                category: "Beauty",
-                instagram: "https://instagram.com/vanniacastillo",
-                tiktok: "https://tiktok.com/@vanniacastillo2"
-              },
-              {
-                name: "Sandra Medina",
-                image: "/san.jpg",
-                category: "Pet Lover",
-                instagram: "https://instagram.com/san.mendezm",
-                tiktok: "https://tiktok.com/@san.mendez"
-              }
-            ].map((talent, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 100, rotate: 5 }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                  rotate: 0,
-                  transition: {
-                    type: "spring",
-                    damping: 15,
-                    stiffness: 100
-                  }
-                }}
-                viewport={{ once: true, margin: "-50px" }}
-                whileHover={{ 
-                  y: -8,
-                  boxShadow: "0 10px 25px -5px rgba(0, 163, 150, 0.2)"
-                }}
-                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300 bg-white"
-              >
-                <div className="relative h-72 w-full overflow-hidden">
-                  <Image
-                    src={talent.image}
-                    alt={talent.name}
-                    fill
-                    className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                    quality={90}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                </div>
-                
-                <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <span className="text-xs text-[#00C2B3] font-medium tracking-wider">{talent.category}</span>
-                      <h4 className="text-lg font-bold text-white mt-1">{talent.name}</h4>
-                    </div>
-                    <div className="flex space-x-2">
-                      <a href={talent.instagram} target="_blank" rel="noopener noreferrer" className="p-1.5 bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition">
-                        <FaInstagram className="text-white text-sm" />
-                      </a>
-                      <a href={talent.tiktok} target="_blank" rel="noopener noreferrer" className="p-1.5 bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition">
-                        <FaTiktok className="text-white text-sm" />
-                      </a>
-                    </div>
-                  </div>
-                  
-                  <div className="mt-2 relative">
-                    <div className="w-full h-px bg-white/20 absolute bottom-0"></div>
-                    <div className="w-0 group-hover:w-full h-px bg-[#00C2B3] absolute bottom-0 transition-all duration-500"></div>
-                  </div>
-                </div>
-                
-                <div className="absolute inset-0 border border-transparent group-hover:border-[#00C2B3]/100 rounded-xl transition-all duration-300 pointer-events-none"></div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+          <div className="absolute bottom-0 left-0 right-0 p-4 z-10">
+            <div className="flex justify-between items-start">
+              <div>
+                <span className="text-xs text-[#00C2B3] font-medium tracking-wider">{talent.category}</span>
+                <h4 className="text-lg font-bold text-white mt-1">{talent.name}</h4>
+              </div>
+              <div className="flex space-x-2">
+                <a href={talent.instagram} target="_blank" rel="noopener noreferrer" className="p-1.5 bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition">
+                  <FaInstagram className="text-white text-sm" />
+                </a>
+                <a href={talent.tiktok} target="_blank" rel="noopener noreferrer" className="p-1.5 bg-white/10 backdrop-blur rounded-full hover:bg-white/20 transition">
+                  <FaTiktok className="text-white text-sm" />
+                </a>
+              </div>
+            </div>
+            
+            <div className="mt-2 relative">
+              <div className="w-full h-px bg-white/20 absolute bottom-0"></div>
+              <div className="w-0 group-hover:w-full h-px bg-[#00C2B3] absolute bottom-0 transition-all duration-500"></div>
+            </div>
+          </div>
+          
+          <div className="absolute inset-0 border border-transparent group-hover:border-[#00C2B3]/100 rounded-xl transition-all duration-300 pointer-events-none"></div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
   {/* Sección Partners */}
 <section id="partners" className="py-20 bg-white">
