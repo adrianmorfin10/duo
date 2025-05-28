@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useState } from 'react';
-import { FaInstagram, FaYoutube, FaTiktok, FaArrowRight, FaEnvelope, FaFacebook, FaStar, FaHandshake, FaChartLine, FaCrosshairs, FaMedal, FaChartBar, FaBars, FaTimes } from 'react-icons/fa';
+import { FaInstagram, FaYoutube, FaTiktok, FaArrowRight, FaEnvelope, FaFacebook, FaStar, FaChartLine, FaCrosshairs, FaMedal, FaChartBar, FaBars, FaTimes } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Home() {
